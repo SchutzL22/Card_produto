@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Cartão de produto</title>
+</head>
+<body>
+
+   <div class="container">
+       <div class="product">
+           <div class="image">
+               <img class="product-image" src="Pickler_baconcheddar.png" alt="">
+           </div>
+           <div class="color">
+               <span class="orange active" data-image="Pickler_dacasa.png" data-color="#DE522F"></span>
+               <span class="green" data-image="Pickler_classic.png" data-color="#9ABE62"></span>
+               <span class="black" data-image="Pickler_baconcheddar.png" data-color="#222627"></span>
+               <span class="red" data-image="Pickler_kids.png" data-color="#B41D26"></span>
+           </div>
+           <div class="title">
+               Hamburguers
+           </div>
+           <div class="detail">
+               <p>Preço : <span>R$50</span></p>
+               <a href="#">Adicionar ao carrinho</a>
+           </div>
+       </div>
+   </div>
+
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+   <script>
+       $(".color span").click(function(){
+
+        $(".color span").removeClass("active");
+        $(this).addClass("active");
+        $(".detail span").css("color",$(this).attr("data-color"));
+        $(".detail a").css("background",$(this).attr("data-color"));
+        $(".product-image").attr("src",$(this).attr("data-image"));
+        $("body").css("background",$(this).attr("data-color"));
+       });
+   </script>
+
+</body>
+</html>
